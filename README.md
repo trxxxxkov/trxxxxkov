@@ -1,1 +1,1 @@
-### Enough said. [Here is my resume](./resume.pdf)
+## Enough said. [Here is my resume](./resume.pdf)
