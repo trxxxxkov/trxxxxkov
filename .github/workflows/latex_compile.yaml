@@ -1,0 +1,34 @@
+name: Automatic build of LaTeX sources
+
+on:
+  push:
+    branches: [ "main", "feature/compile-with-github-actions" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up LaTeX environment
+      uses: dante-ev/latex-action@v2
+
+    - name: Compile first .tex file
+      run: latexmk -pdf -interaction=nonstopmode resume-en.tex
+
+    - name: Compile second .tex file
+      run: latexmk -pdf -interaction=nonstopmode resume-ru.tex
+
+    - name: Commit and push compiled PDFs
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add *.pdf
+        git commit -m 'Update compiled PDFs'
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
