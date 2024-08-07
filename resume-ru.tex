@@ -1,0 +1,225 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel} % Cyrillic letters support
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.6}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=darkblue,        % color of internal links (change box color with linkbordercolor)
+    citecolor=darkblue,        % color of links to bibliography
+    filecolor=darkblue,        % color of file links
+    urlcolor=darkblue          % color of external links
+}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+
+%----------FONT OPTIONS----------
+\usepackage[defaultsans]{droidsans}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.8in}
+\addtolength{\textheight}{1.0in}
+\setlength{\textheight}{100cm}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Третьяков Даниил} \\ \vspace{1pt}
+    \small +7 900 656 0859 $|$ \href{mailto:trxxxxkov@gmail.com}{trxxxxkov@gmail.com} $|$ 
+    \href{https://t.me/trxxxxkov}{@trxxxxkov} $|$
+    \href{https://github.com/trxxxxkov}{github.com/trxxxxkov}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Высшее образование}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Санкт-Петербургский Государственный Университет}{Санкт-Петербург}
+      {Бакалавриат, ПМИ, кафедра математической теории игр и статистических решений}
+      {2020 г. -- н. в.}
+  \resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Технические навыки}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+        \textbf{Математика}{: эконометрика, теория вероятностей, математическая статистика, линейная алгебра, математический анализ, дискретная математика} \\    
+        \vspace{3pt}
+        \textbf{Языки программирования}{: Python, C++, SQL (Postgres), R, Bash} \\
+        \vspace{3pt}
+        \textbf{Фреймворки}{: PyTorch, Scikit-Learn, aiogram} \\
+        \vspace{3pt}
+        \textbf{Библиотеки}{: pandas, NumPy, SciPy, Matplotlib, statsmodels} \\
+        \vspace{3pt}
+        \textbf{Прочее}{: Linux (Arch, btw), Git, Docker, Nginx, SQLAlchemy, BI-системы (DataLens), \href{https://leetcode.com/u/trxxxxkov/}{LeetCode}} \\
+    }}
+ \end{itemize}
+
+%-----------COMMERCIAL PROJECTS-----------
+\section{Коммерческие проекты}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\href{https://github.com/trxxxxkov/chxxxxbot.git}{\textbf{Telegram-бот на базе моделей ИИ}} $|$ \emph{Python, Aiogram, PostgreSQL, Docker, Nginx, DataLens}}{}
+          \resumeItemListStart
+            \resumeItem{Используя \emph{Aiogram} и \emph{OpenAI API},  создал веб-приложение, позволяющее клиентам взаимодействовать с передовыми генеративными моделями на базе ИИ;}
+            \resumeItem{Интегрировал базу данных \emph{PostgreSQL}, значительно повысив надёжность и масштабируемость проекта;}
+            \resumeItem{Настроил \emph{Yandex DataLens} для агрегации, визуализации и анализа пользовательской статистики с целью повышения качества сервиса;}
+            \resumeItem{Настроил \emph{Nginx} как reverse proxy для приёма событий через webhook, что удвоило скорость их обработки;}
+            \resumeItem{Используя \emph{Docker Compose}, спроектировал и реализовал многоконтейнерную систему, снизив время развёртывания проекта на новом сервере до 1 минуты;}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------NON-PROFIT PROJECTS-----------
+\section{Некоммерческие проекты}
+
+    \resumeSubHeadingListStart
+    
+      \resumeProjectHeading
+          {\href{https://github.com/trxxxxkov/approxer.git}{\textbf{Генетический алгоритм для сужения и аппроксимация множества Парето}} $|$ \emph{Python, SciPy, Matplotlib}}{}
+          \resumeItemListStart
+            \resumeItem{Программно реализовал сужение множества Парето с использованием квантов информации от ЛПР;}
+            \resumeItem{Проанализировал и сравнил существующие методы аппроксимации множества Парето;}
+            \resumeItem{Адаптировал генетический алгоритм для использования в итерационном процессе сужения;}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------HACKATONS AND CHALLENGES-----------
+\section{Участие в соревнованиях}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+            {\textbf{Участник соревнования \href{https://backdropbuild.com/}{Backdrop Build в категории "AI"} с проектом \href{https://github.com/trxxxxkov/chxxxxbot.git}{chxxxxbot}.}}{\emph{Июль 2024}}
+        \resumeProjectHeading
+            {\textbf{Участник хакатона \href{https://e-cup-ozon.ru/\#about}{E-CUP 2024 от Ozon Tech} в команде на позиции Data Engineer.}}{\emph{Август 2024}}
+    
+    \resumeSubHeadingListEnd
+
+
+%-----------WORKING CONDITIONS-----------
+\section{Предпочтительные условия работы}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=-0.1em]
+    \small{
+        \item \textbf{График работы}: 
+        \vspace{-8pt}
+        \begin{itemize}
+            \item Фиксированный график: 20-32 ч. в неделю
+            \vspace{-3pt}
+            \item Гибкий график: до 40 ч. в неделю
+        \end{itemize}
+        \vspace{-4pt}
+        \item \textbf{Местоположение}: 
+        \vspace{-8pt}
+        \begin{itemize}
+            \item Санкт-Петербург
+            \vspace{-3pt}
+            \item Удаленная работа
+        \end{itemize}
+    }
+\end{itemize}
+
+
+%-----------ADDITIONAL SKILLS AND KNOWLEDGE-----------
+\section{Дополнительные знания и навыки}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+            {\textbf{Уровень владения английским языком: Upper Intermediate (B2)} $|$ \emph{Сертификат СПбГУ}}{\emph{Июль 2022}}    
+        \resumeProjectHeading
+            {\textbf{Математическая статистика} $|$ \emph{\href{https://stepik.org/cert/2197375}{Сертификат Computer Science Center}}}{\emph{Октябрь 2023}}
+        \resumeProjectHeading
+            {\textbf{Математический анализ} $|$ \emph{\href{https://stepik.org/cert/2202369}{Сертификат Computer Science Center}}}{\emph{Октябрь 2023}}
+        \resumeProjectHeading
+            {\textbf{Линейная алгебра} $|$ \emph{\href{https://stepik.org/cert/2378334}{Сертификат Computer Science Center}}}{\emph{Март 2024}}
+        \resumeProjectHeading
+            {\textbf{Теория вероятностей} $|$ \emph{\href{}{Сертификат Computer Science Center}}}{\emph{Август 2024}}
+        \resumeProjectHeading
+            {\textbf{Введение в соревновательный Data Science} $|$ \emph{\href{}{Сертификат Stepik}}}{\emph{Август 2024}}
+    \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
+

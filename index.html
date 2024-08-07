@@ -6,17 +6,20 @@ of the document which depends on user's language.
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Viewer</title>
     <style>
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden;
         }
+
         iframe {
             position: absolute;
             top: 0;
@@ -27,11 +30,12 @@ of the document which depends on user's language.
         }
     </style>
 </head>
+
 <body>
     <script>
         // Get user's language
         var userLang = navigator.language || navigator.userLanguage;
-        
+
         // Set path to the file depending on user's language
         var pdfFile;
         if (userLang.startsWith('ru')) {
@@ -40,9 +44,11 @@ of the document which depends on user's language.
             pdfFile = 'resume-en.pdf';
         }
 
+        // Open pdf viewer
         var iframe = document.createElement('iframe');
         iframe.src = pdfFile;
         document.body.appendChild(iframe);
     </script>
 </body>
+
 </html>
