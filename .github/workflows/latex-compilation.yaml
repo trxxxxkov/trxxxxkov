@@ -26,6 +26,11 @@ jobs:
         root_file: resume-ru.tex
         compiler: pdflatex
         args: -interaction=nonstopmode -shell-escape
+    
+    - name: Rename PDFs
+      run: |
+        mv resume-en.pdf daniil-tretyakov-resume-en.pdf
+        mv resume-ru.pdf daniil-tretyakov-resume-ru.pdf
 
     - name: Commit and push compiled PDFs
       env:
